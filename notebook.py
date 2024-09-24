@@ -214,14 +214,14 @@ def get_urls_from_snowflake():
         try:
             ctx = snowflake.connector.connect(
                 user=f'{OKTA_USER}',
-                account='discoverorg',
-                authenticator='externalbrowser',
-                warehouse='WH_DATA_ENABLEMENT_LARGE',
-                role='TEAM_DATA_ENABLEMENT'
+                account='xxxx',
+                authenticator='xxxx',
+                warehouse='xxxxx',
+                role='xxxx'
             )
 
             cursor = ctx.cursor()
-            cursor.execute("SELECT submitted_form_url FROM prd_rnd_web_acquisition.ods_sec_data.sec_archive LIMIT 1000")
+            cursor.execute("SELECT xxxx FROM xxx.xxxx.xxxx LIMIT 1000")
             urls = [row[0] for row in cursor.fetchall()]
             ctx.close()
             return urls
